@@ -29,7 +29,7 @@ export default function Result({ score, totalScore,states}) {
         </div>
       </div>
       <div className="text-center">
-        <button className="bg-gray-100 w-2/4 border my-2 rounded" onClick={restart}>Play Again</button>
+        <button className="bg-gray-100 w-2/4 border border-black my-2 rounded" onClick={restart}>Play Again</button>
       </div>
     </div>
     </>

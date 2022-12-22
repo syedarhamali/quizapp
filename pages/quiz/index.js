@@ -212,17 +212,18 @@ export default function About() {
         setanswerValidaty(false)
         setProgress(progress+10)
 
-    }
-    const checkAnswer = (e) => {
+        
+      }
+      const checkAnswer = (e) => {
         counter === questions.length - 1?setShowResult(true):  ""
         
         if (e === decodeURIComponent(questions[counter].correct_answer)) {
-            setanswerState("Correct")
+            setanswerState("Correct!!")
             setScore(score + 10)
         }
         else {
             setwrongAnswers(wrongAnswers + 1)
-            setanswerState("Wrong")
+            setanswerState("Wrong :/ ")
         }
 
         setanswerValidaty(true)
@@ -255,14 +256,14 @@ export default function About() {
                                 <p className='text-dark-xl py-10'>{decodeURIComponent(questions[counter].question)}</p>
                             </div>
                             <div className='grid gap-5 grid-cols-2 grid-rows-2 p-2'>
-                                <Options checkAnswer={checkAnswer} incorrectOptions={questions[counter].incorrect_answers} correctOption={questions[counter].correct_answer} />
+                                <Options checkAnswer={checkAnswer} incorrectOptions={questions[counter].incorrect_answers} correctOption={questions[counter].correct_answer} buttoncurrentState={answer}/>
                             </div>
                         </div>
                         <div className='text-center py-2'>
                             {answer &&
                                 <>
                                     <h3 className='text-3xl mb-4' >{answerState}</h3>
-                                    <button onClick={nextQuestion} className="bg-transparent focus:bg-black text-black-700 focus:text-white py-2 px-4 border border-black-500 hover:border-black">Next Question</button>
+                                    <button onClick={nextQuestion} className="bg-transparent focus:bg-black text-black-700 focus:text-white py-2 px-4 border border-black-500 hover:border-black rounded">Next Question</button>
                                 </>
                             }
                         </div>
